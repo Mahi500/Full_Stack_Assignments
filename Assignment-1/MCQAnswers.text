@@ -1,0 +1,290 @@
+1. The ” var” and “function” are known as _____________.
+
+a. Data types
+
+b. Keywords
+
+c. Prototypes
+
+d. Declaration statements
+
+Answer: d
+
+Explanation: because these are used to declare the variables and functions anywhere in the program.
+
+
+2. Which of these is a correct output for the JavaScript code given below?
+
+string X= “Hey”;
+
+string Y=”There”;
+
+alert(X+Y);
+
+a. Hey There
+
+b. Hey_There
+
+c. HeyThere
+
+d. undefined
+
+Answer: undefined
+
+Explanation: string datatype is not present in javascript top declare string.we need to use 'var'.
+
+3. Which of these is known as the Equality operator used for checking whether both the values are equal?
+
+a. =
+
+b. ==
+
+c. ===
+
+d. &&
+
+Answer: b
+
+Explanation: to check values equal or not we need to use ==, this will not check datatypes of both comparable values. Only check the values. 
+
+4. function sayHi() {
+  console.log(name);
+  console.log(age);
+  var name = 'Lydia';
+  let age = 21;
+}
+
+sayHi();
+A: Lydia and undefined
+B: Lydia and ReferenceError
+C: ReferenceError and 21
+D: undefined and ReferenceError
+
+Answer: D
+
+Explanation:
+
+Here name is not declared initially but trying to print it.
+because of hoisting we are getting ReferenceError here for age which is not defined.
+
+
+5. for (var i = 0; i < 3; i++) {
+    setTimeout(() => console.log(i), 1);
+  }
+  
+  for (let i = 0; i < 3; i++) {
+    setTimeout(() => console.log(i), 1);
+  }
+A: 0 1 2 and 0 1 2
+B: 0 1 2 and 3 3 3
+C: 3 3 3 and 0 1 2
+
+Answer: 
+
+Explanation:
+
+
+6.function Person(firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+}
+
+const lydia = new Person('Lydia', 'Hallie');
+const sarah = Person('Sarah', 'Smith');
+
+console.log(lydia);
+console.log(sarah);
+A: Person {firstName: "Lydia", lastName: "Hallie"} and undefined
+B: Person {firstName: "Lydia", lastName: "Hallie"} and Person {firstName: "Sarah", lastName: "Smith"}
+C: Person {firstName: "Lydia", lastName: "Hallie"} and {}
+D:Person {firstName: "Lydia", lastName: "Hallie"} and ReferenceError
+
+Answer: A
+
+Explanation:
+we need to create a new object to pass the parameters to a constructor using new objectname only.
+
+7.function sum(a, b) {
+    return a + b;
+  }
+  
+  sum(1, '2');
+A: NaN
+B: TypeError
+C: "12"
+D: 3
+
+Answer: NaN
+
+Explanation: No output we can't add number and string
+
+
+8. let number = 0;
+console.log(number++);
+console.log(++number);
+console.log(number);
+
+A: 1 1 2
+B: 1 2 2
+C: 0 2 2
+D: 0 1 2
+
+Answer: C
+
+Explanation:
+post increment --> number++ means after printing the value it will be incremented.
+pre increment ---> number will be incremented first later it will be assigned and printed.
+
+9. var num = 8;
+var num = 10;
+
+console.log(num);
+A: 8
+B: 10
+C: SyntaxError
+D: ReferenceError
+
+Answer: B
+
+Explanation:
+num variable will be updated according to latest assigned value.
+
+10. const obj = { a: 'one', b: 'two', a: 'three' };
+console.log(obj);
+A: { a: "one", b: "two" }
+B: { b: "two", a: "three" }
+C: { a: "three", b: "two" }
+D: SyntaxError
+
+Answer: C
+Explanation:
+a value is modified in the object hence latest vale it will take.
+
+11. Output of code 
+var text = 'outside';
+function logIt(){
+    console.log(text);
+    var text = 'inside';
+};
+logIt();
+
+Answer: outside
+Explanation:
+because text is assigned with outside initially and printed in the funtion. Later it is assigned to something.
+
+12. Write program to call the getUsers then print users using callback, promise.
+13. What is call apply bind explain this with the help of example.
+     
+     call,Apply,bind:
+     call will invoke the function and we can pass a parameter through it.
+     Apply is also to invoke the function using parameter but difference is it will pass parameter as array elements where as call will pass as string.
+     bind will return a new function. We will take that function and execute it.
+     
+     example:
+     let employee={
+        id: 1 ,
+        name:"Mahendra",
+        department:"Finance"
+        show:function(){
+            console.log("name==",this.name);
+        }
+
+     }
+
+     let employee2={
+        id: 2 ,
+        name:"Manoj"
+
+     }
+
+     let employee3={
+        id: 3,
+        name:"Sathish"
+
+     }
+
+     employee.show.call(employee2);  this will return name of employee2
+     employee.show.apply(employee3);  this will return the name of employee3
+     let fun=employee.show.bind(employee3); this will return one function
+     fun();
+
+
+
+
+14.Explain Hoisting with example.
+    
+    Hoisting means a variable can be used before it has been declared. A variable is declared by the js engine as a default so that we can use it directly.
+    We will get reference error for not assigning anything to that variable.
+
+    We can directly specify the value to variable without var Keyword.
+
+    example:
+
+    console.log(a);    --> a is not defined yet, If we run this we will get reference error
+
+    a=6;               --> we can do like this directly without var 
+
+    console.log(a);    --> we will get 6 here.
+
+    var a=6;
+
+    console.log(5);
+
+
+15. Output of this code
+var length = 10;
+function fn() {
+    console.log(this.length);
+}
+
+var obj = {
+  length: 5,
+  method: function(fn) {
+    fn();
+    arguments[0]();
+  }
+};
+
+obj.method(fn, 1);
+
+Output:
+
+
+
+16. what would following code return 
+
+console.log(typeof typeof 1);
+
+Answer: string
+
+Explanation:
+
+typeof 1 is number and typeof typeof 1 is string.
+typeof 'number' is string
+
+17. write a progroam to delete employee whose age is 18 
+[
+    {
+        id:1,
+        age:40
+    },
+    {
+        id:2,
+        age:50
+    },
+    {
+        id:3,
+        age:40
+    },
+    {
+        id:4,
+        age:20
+    }
+]
+
+18. Write a program to check number is palidrome or not. 
+19 . Write a program to remove duplicate from array 
+    [30,45,60,20,30,55]
+
+
+20. Write a piece of code to center a div vertically and horizontally.
